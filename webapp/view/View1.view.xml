@@ -6,7 +6,7 @@
         </headerContent>
         <content>
             <SearchField id="idSearch" search="onSearch"></SearchField>
-            <List id="idList" selectionChange="onNext" items="{path : '/fruits', sorter : { path : 'type', group : true }}" mode="SingleSelectMaster" delete="onDelete">
+            <List id="idList" selectionChange="onSelectItem" items="{path : '/fruits', sorter : { path : 'type', group : true }}" mode="SingleSelectMaster" delete="onDelete">
                 <items>
                     <ObjectListItem intro="{type}" 
                     title="{name}" 

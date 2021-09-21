@@ -41,7 +41,55 @@
 			"compact": true,
 			"cozy": true
 		},
-		"resources": {},
+        "resources": {},
+        "rootView":{
+            "viewName": "emc.fin.ar.view.App",
+            "type": "XML",
+            "id": "idRootView"
+        },
+        "routing":{
+            "config":{
+                "viewPath": "emc.fin.ar.view",
+                "viewType": "XML",
+                "routerClass": "sap.m.routing.Router",
+                "controlId": "idAppCon"
+            },
+            "routes": [{
+				"pattern": "",
+				"name": "start",
+				"target": ["master", "empty"]
+			}, {
+				"pattern": "myfruits/{fruitId}",
+				"name": "detail",
+				"target": ["master", "modi"]
+			},{
+                "name": "supplier",
+                "pattern": "MyFavouriteSupplierData",
+                "target":["master", "supp"]
+            }],
+			"targets": {
+				"master": {
+					"viewName": "View1",
+					"controlAggregation": "masterPages",
+					"viewId": "idView1"
+				},
+				"empty": {
+					"viewName": "Avengers",
+					"controlAggregation": "detailPages",
+					"viewId": "idEmpty"
+				},
+				"modi": {
+					"viewName": "View2",
+					"controlAggregation": "detailPages",
+					"viewId": "idView2"
+                },
+                "supp":{
+					"viewName": "Supplier",
+					"controlAggregation": "detailPages",
+					"viewId": "idSupplier"
+                }
+			}
+        },
 		"models": {
 			"": {
 				"type": "sap.ui.model.json.JSONModel",

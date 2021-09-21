@@ -1,6 +1,28 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
           controllerName="emc.fin.ar.controller.View2">
     <Page title="View 2" showNavButton="true" navButtonPress="onBack" >
-        <!-- <Button press="onBack" text="Go Back" /> -->
+        <ObjectHeader title="{name}" intro="{healthBenefit}" number="{price}" numberUnit="{currency}"
+        icon="{imageURL}"></ObjectHeader>
+        <IconTabBar >
+            <items>
+                <IconTabFilter text="More Info" icon="sap-icon://warning">
+                    <f:SimpleForm >
+                        <f:content>
+                            <Label text="Type"></Label>
+                            <Text text="{type}"></Text>
+                            <Label text="Color"></Label>
+                            <Text text="{color}"></Text>
+                            <Label text="Price"></Label>
+                            <Text text="{price} {currency}"></Text>
+                            <Label text="Status"></Label>
+                            <Text text="{status}"></Text>
+                            <Button text="Show me a Supplier" press="onSupplier" />
+                        </f:content>
+                    </f:SimpleForm>
+                </IconTabFilter>
+                <IconTabFilter text="Suppliers" icon="sap-icon://supplier"></IconTabFilter>
+                <IconTabFilter text="Cities" icon="sap-icon://home"></IconTabFilter>
+            </items>
+        </IconTabBar>
     </Page>
 </mvc:View>

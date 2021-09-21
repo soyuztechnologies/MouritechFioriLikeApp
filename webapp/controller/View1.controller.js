@@ -7,11 +7,32 @@ sap.ui.define([
     'use strict';
     return BaseController.extend("emc.fin.ar.controller.View1",{
         formatter: formatter,
+        onInit: function(){
+            this.oRouter = this.getOwnerComponent().getRouter();
+        },
         onNext: function() {
             //Step 1: I need to go to Mom
             var oAppCon = this.getView().getParent();
             //Step 2: Ask mom to go to View 2
             oAppCon.to("idView2");
+        },
+        onSelectItem: function (oEvent) {
+            //Step 1: get the selected item on screen - object
+            var oSelectedItem = oEvent.getParameter("listItem");
+            debugger;
+            //Step 2: address of memory/element which suppling data here
+            var sPath = oSelectedItem.getBindingContextPath();
+            var sIndex = sPath.split("/")[sPath.split("/").length - 1];
+            this.oRouter.navTo("detail",{
+                fruitId: sIndex
+            });
+
+
+            //Step 3: Get the view 2 object from mother
+            // var oView2 = this.getView().getParent().getParent().getDetailPages()[0];
+            // //Step 4: bind the path with complete view2
+            // oView2.bindElement(sPath);
+
         },
         onSearch: function (oEvent) {
             //step 1: read what value user enter on screen

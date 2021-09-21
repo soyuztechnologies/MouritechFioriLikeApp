@@ -1,0 +1,15 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+          controllerName="emc.fin.ar.controller.Supplier">
+    <f:SimpleForm >
+        <f:content>
+            <Label text="Name" />
+            <Text text="{name}" />
+            <Label text="Since When" />
+            <Text text="{sinceWhen}" />
+            <Label text="Contact Person" />
+            <Text text="{contactPerson}" />
+            <Label text="City" />
+            <Text text="{city}" />
+        </f:content>
+    </f:SimpleForm>
+</mvc:View>

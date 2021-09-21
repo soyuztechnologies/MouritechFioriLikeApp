@@ -2,17 +2,13 @@ sap.ui.define([
     'emc/fin/ar/controller/BaseController'
 ], function(BaseController) {
     'use strict';
-    return BaseController.extend("emc.fin.ar.controller.View2",{
+    return BaseController.extend("emc.fin.ar.controller.Supplier",{
         onInit: function(){
             this.oRouter = this.getOwnerComponent().getRouter();
-            this.oRouter.getRoute("detail").attachMatched(this.herculis, this);
-        },
-        onSupplier: function(){
-            this.oRouter.navTo("supplier");
+            this.oRouter.getRoute("supplier").attachMatched(this.herculis, this);
         },
         herculis: function(oEvent){
-            var sIndex = oEvent.getParameter("arguments").fruitId;
-            var sPath = '/fruits/' + sIndex;
+            var sPath = '/suppliers/0';
             this.getView().bindElement(sPath);
         },
         onBack: function(){
