@@ -8,9 +8,10 @@
             <items>
                 <IconTabFilter text="More Info" icon="sap-icon://warning">
                     <core:Fragment fragmentName="emc.fin.ar.fragments.myForm" type="XML" />
-                    <core:Fragment fragmentName="emc.fin.ar.fragments.myForm" type="XML" />
                 </IconTabFilter>
-                <IconTabFilter text="Suppliers" icon="sap-icon://supplier"></IconTabFilter>
+                <IconTabFilter text="Suppliers" icon="sap-icon://supplier">
+                    <core:Fragment fragmentName="emc.fin.ar.fragments.supplierTab" type="XML" />
+                </IconTabFilter>
                 <IconTabFilter text="Cities" icon="sap-icon://home"></IconTabFilter>
             </items>
         </IconTabBar>
