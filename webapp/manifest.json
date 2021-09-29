@@ -11,7 +11,14 @@
 		"description": "{{appDescription}}",
 		"tags": {
 			"keywords": ["{{fruits}}"]
-		},
+        },
+        "dataSources": {
+            "anubhavSystem":{
+                "uri": "/sap/opu/odata/sap/ZODATA_AO_SRV/",
+                "type": "OData",
+                "settings": {"odataVersion": "2.0"}
+            }
+        },
 		"ach": "FIN-ACC-AR"
 	},
 	"sap.ui": {
@@ -91,7 +98,10 @@
 			}
         },
 		"models": {
-			"": {
+            "":{
+                "dataSource": "anubhavSystem"
+            },
+			"fruits": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/fruitdata.json"
             },

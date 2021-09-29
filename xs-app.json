@@ -1,0 +1,33 @@
+{
+
+    "welcomeFile": "/index.html",
+
+    "authenticationMethod": "none",
+
+    "routes": [
+
+        {
+
+            "authenticationType": "none",
+
+            "csrfProtection": false,
+
+            "source": "^/sap/opu/odata/sap/ZODATA_AO_SRV/",
+
+            "destination": "Mouritech"
+
+        },
+
+        {
+
+            "source": "^(.*)$",
+
+            "target": "$1",
+
+            "service": "html5-apps-repo-rt"
+
+        }
+
+    ]
+
+}
